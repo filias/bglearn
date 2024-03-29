@@ -1,4 +1,5 @@
 from django.contrib import admin
 
+from .models import Position
 
-class PositionAdmin(admin.ModelAdmin): ...
+admin.site.register(Position)

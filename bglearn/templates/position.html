@@ -1,4 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-BLAH BLAH BLAH
+<div id="puzzleContainer">
+    <img id="puzzleImage" src="path_to_puzzle_image.jpg" alt="Backgammon Puzzle"/>
+    <img id="analysisImage" src="path_to_analysis_image.jpg" alt="Puzzle Analysis"/>
+</div>
+<button id="revealSolutionBtn">Reveal Solution</button>
+
+<script>
+    document.getElementById("revealSolutionBtn").addEventListener("click", function() {
+        document.getElementById("puzzleImage").style.display = "none";
+        document.getElementById("analysisImage").style.display = "block";
+        this.style.display = "none"; // Optionally hide the button after use
+    });
+</script>
 {% endblock %}

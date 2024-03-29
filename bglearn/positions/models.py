@@ -13,7 +13,7 @@ class Category(StrEnum):
 
 class Position(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    category = models.CharField(max_length=32)
+    category = models.CharField(max_length=32, choices=[(k, k.value) for k in Category])
     position = models.ImageField(upload_to="positions/")
     solution = models.ImageField(upload_to="positions/")
-    analysis = models.ImageField(upload_to="positions/")
+    source = models.CharField(max_length=255)

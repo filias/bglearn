@@ -24,10 +24,9 @@ PROJECT_ROOT = Path(__file__).parent.parent
 SECRET_KEY = "django-insecure-4pnmln7mlk@7td5d^$b_*c0sux^z@ivfwla%pui1#9bg+nkkxk"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -71,10 +70,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "bglearn.wsgi.application"
 
+# Static files settings
+# STATICFILES_DIRS = [PROJECT_ROOT / "static"]
+STATIC_ROOT = BASE_DIR / "static"
+STATIC_URL = "/static/"
+
 
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
