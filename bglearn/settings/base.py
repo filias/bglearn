@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).parent.parent.parent
 PROJECT_ROOT = Path(__file__).parent.parent
 
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = "bglearn.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [PROJECT_ROOT / "bglearn" / "templates"],
+        "DIRS": [PROJECT_ROOT / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -71,10 +71,13 @@ TEMPLATES = [
 WSGI_APPLICATION = "bglearn.wsgi.application"
 
 # Static files settings
-# STATICFILES_DIRS = [PROJECT_ROOT / "static"]
+STATICFILES_DIRS = [PROJECT_ROOT / "static"]
 STATIC_ROOT = BASE_DIR / "static"
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
 
+# Media files settings
+MEDIA_ROOT = BASE_DIR / "media/"
+MEDIA_URL = "media/"
 
 # Database
 DATABASES = {
