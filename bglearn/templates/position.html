@@ -5,6 +5,8 @@
     <img id="toggleImage" src="{% static 'positions/position.png' %}" style="width: 640px; height: auto;" />
 </div>
 <button id="toggleButton">Solution</button>
+<button id="analysisButton">Analysis</button>
+<button id="nextButton">Next</button>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -15,10 +17,13 @@
         // Function to toggle the image source
         function toggleImage() {
             var imageElement = document.getElementById('toggleImage');
+            var buttonElement = document.getElementById('toggleButton');
             if (isPositionImage) {
                 imageElement.src = solutionImage;
+                buttonElement.innerText = "Position";
             } else {
                 imageElement.src = positionImage;
+                buttonElement.innerText = "Solution";
             }
             isPositionImage = !isPositionImage; // Toggle the flag
         }
